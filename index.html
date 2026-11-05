@@ -12,26 +12,17 @@
 <body id="inicio">
 <a class="skip" href="#principal">Saltar al contenido</a>
 <header><div class="wrap bar">
-  <a class="brand" href="#inicio"><img data-image="marca" width="44" height="48" alt=""><span>Haras Turrialba</span></a>
+  <a class="brand" href="#inicio"><img data-image="firma" width="180" height="42" alt="Haras Turrialba"></a>
   <button class="mobile-toggle" aria-expanded="false" aria-controls="nav">Secciones ☰</button>
-  <nav id="nav" aria-label="Principal"><a href="#restaurante">Restaurante</a><a href="#finca">La finca</a><a href="#eventos">Eventos</a><a href="#nosotros">Nosotros</a><a href="#ubicacion">Ubicación</a></nav>
+  <nav id="nav" aria-label="Principal"><a href="#restaurante">Restaurante</a><a href="#finca">La finca</a><a href="#nosotros">Nosotros</a><a href="#ubicacion">Ubicación</a><a class="portal" href="eventos.html">Eventos especiales ↗</a></nav>
   <button class="theme" type="button" aria-label="Cambiar tema" title="Cambiar tema">◐</button>
 </div></header>
-<main id="principal">
-<section class="wrap hero">
-  <div class="intro"><p class="eyebrow"><span></span> Santa Cruz · Turrialba</p>
-  <h1>Un día en <br><em>el campo.</em></h1>
-  <p class="lead">Vení a almorzar en la finca, subite al chapulín y quedate un rato más entre las montañas de Turrialba.</p>
-  <div class="actions"><a class="btn solid" href="#restaurante">Ver el menú <span>↓</span></a><a class="btn" href="#eventos">Eventos especiales <span>↗</span></a></div>
-  </div>
-  <figure class="postcard"><div class="art"><img data-image="portada" alt="" fetchpriority="high"></div><figcaption><b>Santa Cruz de Turrialba</b><span>Cartago, Costa Rica</span></figcaption></figure>
-</section>
-<div class="visit-strip"><div class="wrap facts"><a href="#ubicacion"><i>⌖</i> A 90 min de San José</a><a href="#ubicacion"><i>◷</i> Viernes a domingo</a><a href="#finca"><i>♧</i> Finca y senderos</a></div></div>
+<main id="principal"><section class="cover"><img class="scene" data-image="portada" fetchpriority="high" alt=""><div class="wrap cover-copy"><p class="kicker">Restaurante &amp; centro turístico</p><h1>Bienvenido a<br><em>Haras.</em></h1><p>Desayunos, cortes Angus y paseos en chapulín entre las montañas de Turrialba.</p><div class="actions"><a class="btn solid" href="#restaurante">Explorar el restaurante ↓</a><a class="btn ghost" href="eventos.html">Haras Eventos ↗</a></div></div><div class="cover-foot wrap">San Rafael de Santa Cruz <span>Cartago · Costa Rica</span></div></section><div class="visit-strip"><div class="wrap facts"><a href="#ubicacion"><i>⌖</i> A 90 min de San José</a><a href="#ubicacion"><i>◷</i> Vie–dom · 8 a. m. a 6 p. m.</a><a href="#finca"><i>♧</i> Finca y senderos</a></div></div>
 <section class="wrap section" id="restaurante"><p class="eyebrow"><span></span> El restaurante</p>
-<div class="heading"><h2>A la mesa <em>en Haras.</em></h2><a class="link" id="menu-link" href="https://wa.me/50684342727?text=Hola%2C%20quisiera%20ver%20el%20men%C3%BA%20del%20restaurante.">Pedir el menú completo ↗</a></div>
-<p>De nuestra cocina a tu mesa, con cortes Angus y opciones libres de gluten.</p>
-<div class="dishes" id="dishes"></div></section>
-<section class="field" id="finca"><div class="wrap split"><div><p class="eyebrow"><span></span> El centro turístico</p><h2>Por la <em>finca.</em></h2><p>Si sos cliente del restaurante, la entrada y las caminatas por la finca son gratis. Los tours se cobran por separado.</p></div>
+<div class="heading"><h2>A la mesa <em>en Haras.</em></h2><a class="link" id="menu-link" href="#carta">Ver menú completo ↓</a></div>
+<p>Vení por el desayuno, almorzá un corte Angus o quedate para la hora del café. También tenemos opciones libres de gluten.</p>
+<div class="dishes" id="dishes"></div><div id="carta" class="carta"><h3>La carta</h3><div id="categorias"></div><a class="link" href="https://wa.me/50684342727?text=Hola%2C%20quisiera%20consultar%20la%20carta%20de%20hoy.">Consultar la carta de hoy ↗</a></div></section>
+<section class="field" id="finca"><div class="ruta" aria-hidden="true"><span class="rodada"><svg viewBox="0 0 80 48" width="66" height="40"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M7 7h29l4 3H6zM15 10v14m16-14 4 16m-5-2 3-6m-7 9h38l6 10H30"/><path fill="currentColor" d="M39 21h23l4 9H39z"/><path d="M56 21V12h3"/><circle cx="19" cy="33" r="12"/><circle cx="19" cy="33" r="5"/><circle cx="62" cy="37" r="8"/><circle cx="62" cy="37" r="2"/></g></svg></span></div><div class="wrap split"><div><p class="eyebrow"><span></span> El centro turístico</p><h2>Por la <em>finca.</em></h2><p>Si sos cliente del restaurante, la entrada y las caminatas por la finca son gratis. Los tours se cobran por separado.</p><img class="ride-photo" data-image="caballos" loading="lazy" alt=""></div>
 <div class="experiences">
 <details open><summary>Tour en chapulín</summary><p>Subite a nuestro tractor y recorré los potreros hasta el mirador.</p></details>
 <details><summary>Tour a caballo</summary><p>Descubrí la finca a caballo con un recorrido guiado. Consultá horarios y tarifas antes de venir.</p></details>
@@ -39,9 +30,9 @@
 <details><summary>Pesca deportiva</summary><p>Hacé una parada para pescar. Escribinos para consultar las condiciones y la disponibilidad del día.</p></details>
 <a class="link" href="https://wa.me/50684342727?text=Hola%2C%20quisiera%20consultar%20por%20los%20tours%20de%20la%20finca.">Consultar por los tours ↗</a>
 </div></div></section>
-<section class="event" id="eventos"><div class="wrap split"><div class="event-mark"><img width="190" height="225" data-image="eventos" alt="Haras Eventos Especiales"></div><div><p class="eyebrow"><span></span> Haras Eventos Especiales</p><h2>Celebrá <em>en Haras.</em></h2><p>Bodas, quinceaños y cenas de graduación en un espacio con capacidad para hasta <strong>1.000 personas</strong>.</p><p>Contanos qué vas a celebrar, la fecha y cuántos invitados esperás. Te ayudamos a preparar la cotización.</p><a class="btn gold" href="https://wa.me/50684342727?text=Hola%2C%20quisiera%20cotizar%20un%20evento%20en%20Haras.%20La%20fecha%20ser%C3%ADa%20">Cotizar mi evento ↗</a></div></div></section>
+<section class="event" id="eventos"><div class="wrap split"><div class="event-mark"><img width="190" height="225" data-image="eventos" alt="Haras Eventos Especiales"></div><div><p class="eyebrow"><span></span> Haras Eventos Especiales</p><h2>Celebrá <em>en Haras.</em></h2><p>Bodas, quinceaños y cenas de graduación en un espacio con capacidad para hasta <strong>1.000 personas</strong>.</p><p>Contanos qué vas a celebrar, la fecha y cuántos invitados esperás. Te ayudamos a preparar la cotización.</p><a class="btn gold" href="eventos.html">Explorar Haras Eventos ↗</a></div></div></section>
 <section class="wrap section split story" id="nosotros"><div><p class="eyebrow"><span></span> Sobre nosotros</p><h2>Nuestra <em>historia.</em></h2></div><p>En 2011, Haras empezó como un proyecto de agroturismo en Santa Cruz de Turrialba. Hoy compartimos la finca con quienes vienen a caminar entre potreros, sentarse a la mesa en familia o celebrar una fecha especial.</p></section>
-<section class="location" id="ubicacion"><div class="wrap split"><div><p class="eyebrow"><span></span> Ubicación</p><h2>Cómo <em>llegar.</em></h2><p>San Rafael de Santa Cruz, Turrialba, Cartago, Costa Rica. A unos 90 minutos de San José.</p><h3>Horario de temporada · 2026</h3><dl><dt>Viernes y sábado</dt><dd>8 a. m. – 3 p. m.</dd><dt>Domingo</dt><dd>8 a. m. – 6 p. m.</dd></dl><a class="btn solid" href="https://maps.app.goo.gl/LxcqaUDGH4dQ4We5A">Abrir en Google Maps ↗</a></div>
+<section class="location" id="ubicacion"><div class="wrap split"><div><p class="eyebrow"><span></span> Ubicación</p><h2>Cómo <em>llegar.</em></h2><p>San Rafael de Santa Cruz, Turrialba, Cartago, Costa Rica. A unos 90 minutos de San José.</p><h3>Horario regular</h3><dl><dt>Viernes a domingo</dt><dd>8 a. m. – 6 p. m.</dd></dl><a class="btn solid" href="https://maps.app.goo.gl/LxcqaUDGH4dQ4We5A">Abrir en Google Maps ↗</a></div>
 <iframe loading="lazy" title="Mapa de Haras Turrialba" src="https://maps.google.com/maps?q=Haras%20Turrialba%2C%20Santa%20Cruz%2C%20Costa%20Rica&amp;output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div></section>
 </main><footer class="wrap"><a class="brand" href="#inicio">Haras Turrialba</a><small>Santa Cruz, Costa Rica</small></footer>
 <a class="whatsapp" href="https://wa.me/50684342727" aria-label="Contactar a Haras por WhatsApp"><svg viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5l-4.7 1.2 1.3-4.5a8.5 8.5 0 1 1 16-4.2Z"/><path d="M8.4 7.7c-1.1 1.1.2 3.9 2.2 5.9 2.2 2 4.8 2.8 5.7 1.3l.4-1-2.6-1.3-.9 1c-1.3-.6-2.4-1.6-3-3l.8-.9-1.2-2.5z" fill="currentColor" stroke="none"/></svg></a>

@@ -1,7 +1,42 @@
 {
   "menuUrl": "",
   "platos": [
-    {"nombre":"Lomito mar y tierra","detalle":"Lomito Certified Angus Beef con dos acompañamientos. Preguntá por nuestro menú secreto.","imagen":"lomito","precio":""},
-    {"nombre":"Cortes Angus","detalle":"Conocé la selección de cortes Certified Angus Beef de nuestra cocina.","imagen":"cortes","precio":""}
+    {
+      "nombre": "Lomito mar y tierra",
+      "detalle": "Lomito Certified Angus Beef con dos acompañamientos. Preguntá por nuestro menú secreto.",
+      "imagen": "lomito",
+      "precio": ""
+    },
+    {
+      "nombre": "Cortes Angus",
+      "detalle": "Conocé la selección de cortes Certified Angus Beef de nuestra cocina.",
+      "imagen": "cortes",
+      "precio": ""
+    }
+  ],
+  "categorias": [
+    {
+      "nombre": "Desayunos",
+      "nota": "Consultá las opciones de desayuno al llegar.",
+      "platos": []
+    },
+    {
+      "nombre": "Almuerzos",
+      "nota": "",
+      "platos": [
+        "Lomito mar y tierra",
+        "Cortes Angus"
+      ]
+    },
+    {
+      "nombre": "Hora del café",
+      "nota": "Preguntá qué hay para acompañar el café de la tarde.",
+      "platos": []
+    },
+    {
+      "nombre": "Opciones libres de gluten",
+      "nota": "Escribinos para conocer las opciones disponibles el día de tu visita.",
+      "platos": []
+    }
   ]
 }

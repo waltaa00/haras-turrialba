@@ -1,7 +1,38 @@
 {
-  "marca": {"src":"assets/marca.svg","alt":"Haras Turrialba"},
-  "portada": {"src":"assets/finca.svg","alt":"Ilustración de una finca entre las montañas"},
-  "eventos": {"src":"assets/eventos.svg","alt":"Haras Eventos"},
-  "lomito": {"src":"assets/lomito.svg","alt":"Ilustración de un plato mar y tierra"},
-  "cortes": {"src":"assets/cortes.svg","alt":"Ilustración de un corte de res"}
+  "marca": {
+    "src": "assets/marca.svg",
+    "alt": "Haras Turrialba"
+  },
+  "portada": {
+    "src": "assets/portada.webp",
+    "alt": "Vista aérea de Haras Turrialba y sus establos rojos"
+  },
+  "eventos": {
+    "src": "assets/eventos.svg",
+    "alt": "Haras Eventos"
+  },
+  "lomito": {
+    "src": "assets/lomito.svg",
+    "alt": "Ilustración de un plato mar y tierra"
+  },
+  "cortes": {
+    "src": "assets/cortes.svg",
+    "alt": "Ilustración de un corte de res"
+  },
+  "recepcion": {
+    "src": "assets/recepcion.webp",
+    "alt": "Mesa de recepción bajo luces doradas en Haras"
+  },
+  "salon": {
+    "src": "assets/salon.webp",
+    "alt": "Invitados en la pista de baile de Haras"
+  },
+  "caballos": {
+    "src": "assets/caballos.webp",
+    "alt": "Visitantes a caballo frente a las caballerizas de Haras"
+  },
+  "firma": {
+    "src": "assets/firma.webp",
+    "alt": "Haras Turrialba"
+  }
 }

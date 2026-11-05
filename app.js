@@ -47,9 +47,11 @@ function setImage(element, image) {
   element.src = image.src;
 }
 async function loadContent() {
-  const [images, menu] = await Promise.all([readData('imagenes'), readData('carta')]);
+  const images = await readData('imagenes');
   document.querySelectorAll('[data-image]').forEach(element => setImage(element, images[element.dataset.image]));
   const list = document.querySelector('#dishes');
+  if (!list) return;
+  const menu = await readData('carta');
   for (const dish of menu.platos) {
     const card = document.createElement('article');
     const photo = document.createElement('img');
@@ -67,6 +69,24 @@ async function loadContent() {
     }
     list.append(card);
   }
+  const categories = document.querySelector('#categorias');
+  for (const category of menu.categorias || []) {
+    const row = document.createElement('details');
+    const label = document.createElement('summary');
+    label.textContent = category.nombre;
+    row.append(label);
+    for (const item of category.platos) {
+      const line = document.createElement('p');
+      line.textContent = item;
+      row.append(line);
+    }
+    if (category.nota) {
+      const note = document.createElement('p');
+      note.textContent = category.nota;
+      row.append(note);
+    }
+    categories.append(row);
+  }
   if (menu.menuUrl) {
     const link = document.querySelector('#menu-link');
     link.href = menu.menuUrl;
@@ -74,5 +94,42 @@ async function loadContent() {
   }
 }
 loadContent().catch(() => {
-  document.querySelector('#dishes').textContent = 'Consultá la selección del día por WhatsApp.';
+  const dishes = document.querySelector('#dishes');
+  if (dishes) dishes.textContent = 'Consultá la selección del día por WhatsApp.';
 });
+
+const motion = matchMedia('(prefers-reduced-motion: reduce)');
+const panels = document.querySelectorAll('main > section:not(.cover)');
+if ('IntersectionObserver' in window) {
+  const reveals = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('arrived');
+        reveals.unobserve(entry.target);
+      }
+    }
+  }, {threshold: 0.06});
+  panels.forEach(panel => reveals.observe(panel));
+}
+const trail = document.querySelector('.ruta');
+if (trail) {
+  let queued = false;
+  function positionTractor() {
+    queued = false;
+    if (motion.matches) return;
+    const box = trail.getBoundingClientRect();
+    const progress = Math.max(0, Math.min(1, (innerHeight - box.top) / innerHeight));
+    const offset = progress * Math.max(0, box.width - 70);
+    trail.style.setProperty('--travel', offset + 'px');
+  }
+  function requestPosition() {
+    if (!queued && !motion.matches) {
+      queued = true;
+      requestAnimationFrame(positionTractor);
+    }
+  }
+  window.addEventListener('scroll', requestPosition, {passive:true});
+  window.addEventListener('resize', requestPosition);
+  motion.addEventListener('change', requestPosition);
+  requestPosition();
+}
