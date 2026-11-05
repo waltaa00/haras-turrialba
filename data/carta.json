@@ -1,0 +1,7 @@
+{
+  "menuUrl": "",
+  "platos": [
+    {"nombre":"Lomito mar y tierra","detalle":"Lomito Certified Angus Beef con dos acompañamientos. Preguntá por nuestro menú secreto.","imagen":"lomito","precio":""},
+    {"nombre":"Cortes Angus","detalle":"Conocé la selección de cortes Certified Angus Beef de nuestra cocina.","imagen":"cortes","precio":""}
+  ]
+}

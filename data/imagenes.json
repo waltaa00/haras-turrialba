@@ -1,0 +1,7 @@
+{
+  "marca": {"src":"assets/marca.svg","alt":"Haras Turrialba"},
+  "portada": {"src":"assets/finca.svg","alt":"Ilustración de una finca entre las montañas"},
+  "eventos": {"src":"assets/eventos.svg","alt":"Haras Eventos"},
+  "lomito": {"src":"assets/lomito.svg","alt":"Ilustración de un plato mar y tierra"},
+  "cortes": {"src":"assets/cortes.svg","alt":"Ilustración de un corte de res"}
+}
