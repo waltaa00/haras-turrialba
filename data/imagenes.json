@@ -34,5 +34,21 @@
   "firma": {
     "src": "assets/firma.webp",
     "alt": "Haras Turrialba"
+  },
+  "herradura": {
+    "src": "assets/herradura.webp",
+    "alt": ""
+  },
+  "solomo": {
+    "src": "assets/solomo.svg",
+    "alt": "Ilustración de punta de solomo"
+  },
+  "tomahawk": {
+    "src": "assets/tomahawk.svg",
+    "alt": "Ilustración de tomahawk de cerdo"
+  },
+  "arroz": {
+    "src": "assets/arroz.svg",
+    "alt": "Ilustración de arroz con camarones"
   }
 }

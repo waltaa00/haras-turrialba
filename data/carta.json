@@ -12,6 +12,24 @@
       "detalle": "Conocé la selección de cortes Certified Angus Beef de nuestra cocina.",
       "imagen": "cortes",
       "precio": ""
+    },
+    {
+      "nombre": "Punta de solomo",
+      "imagen": "solomo",
+      "detalle": "",
+      "precio": ""
+    },
+    {
+      "nombre": "Tomahawk de cerdo",
+      "imagen": "tomahawk",
+      "detalle": "",
+      "precio": ""
+    },
+    {
+      "nombre": "Arroz con camarones",
+      "imagen": "arroz",
+      "detalle": "",
+      "precio": ""
     }
   ],
   "categorias": [
@@ -25,7 +43,10 @@
       "nota": "",
       "platos": [
         "Lomito mar y tierra",
-        "Cortes Angus"
+        "Cortes Angus",
+        "Punta de solomo",
+        "Tomahawk de cerdo",
+        "Arroz con camarones"
       ]
     },
     {

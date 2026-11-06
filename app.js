@@ -61,7 +61,8 @@ async function loadContent() {
     name.textContent = dish.nombre;
     const description = document.createElement('p');
     description.textContent = dish.detalle;
-    card.append(photo, name, description);
+    card.append(photo, name);
+    if (dish.detalle) card.append(description);
     if (dish.precio) {
       const price = document.createElement('strong');
       price.textContent = dish.precio;
@@ -132,4 +133,29 @@ if (trail) {
   window.addEventListener('resize', requestPosition);
   motion.addEventListener('change', requestPosition);
   requestPosition();
+}
+
+const atlas = document.querySelector('.atlas');
+if (atlas) {
+  const buttons = [...atlas.querySelectorAll('[data-zone]')];
+  const places = [...atlas.querySelectorAll('[data-place]')];
+  const title = atlas.querySelector('.zone-info h3');
+  const description = atlas.querySelector('.zone-info p');
+  function selectZone(id) {
+    const button = buttons.find(item => item.dataset.zone === id);
+    if (!button) return;
+    buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    places.forEach(place => place.classList.toggle('selected', place.dataset.place === id));
+    title.textContent = button.lastChild.textContent.trim();
+    description.textContent = button.dataset.description;
+  }
+  for (const control of [...buttons, ...places]) {
+    const activate = () => selectZone(control.dataset.zone || control.dataset.place);
+    control.addEventListener('click', activate);
+    control.addEventListener('focus', activate);
+    control.addEventListener('pointerenter', event => {
+      if (event.pointerType === 'mouse') activate();
+    });
+  }
+  selectZone('1');
 }

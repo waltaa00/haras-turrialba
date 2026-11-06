@@ -18,3 +18,69 @@ header{background:#191817;color:#fff7ed;border-bottom:1px solid #514743}.bar .br
 @media(prefers-reduced-motion:reduce){.rodada{transform:none}}
 @media(max-width:810px){.bar nav{background:#191817}.bar .portal{border:0;padding-left:0}.cover{min-height:540px}.cover-copy{padding:60px 0 88px}.venue .types{grid-template-columns:1fr 1fr}.cover:after{background:linear-gradient(90deg,#171110ca,#17111055),linear-gradient(0deg,#16111099,transparent 60%)}.gallery{gap:14px}}
 @media(max-width:540px){.bar .brand img{width:149px}.cover{min-height:min(650px,85svh)}.cover h1{font-size:clamp(55px,15.3vw,80px)}.cover-foot{font-size:.55rem;letter-spacing:.07em}.cover-copy>p:not(.kicker){font-size:1rem}.cover .actions{gap:8px}.cover .btn{padding-inline:12px;font-size:.8rem}.cover .scene{object-position:60% center}.venue .types,#categorias,.gallery{grid-template-columns:1fr}.types article{padding:18px}.gallery img{aspect-ratio:1.65}.venue-logo{margin-bottom:7px}.ruta{margin-bottom:22px}}
+
+/* Dos destinos con acceso permanente en ambos tamaños de pantalla. */
+header .bar .brand img {width:36px;height:35px}
+.bar .brand span {font:700 clamp(19px,2vw,26px)/1 Georgia,serif;letter-spacing:-.045em;white-space:nowrap}
+.bar {min-height:59px}
+.worlds {position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(388px,90%);margin:0 auto 8px;padding:3px;border:1px solid #665f58;border-radius:24px;background:#282523;color:#f8f4ed}
+.worlds::before {content:"";position:absolute;z-index:-1;inset:3px auto 3px 3px;width:calc(50% - 3px);border-radius:20px;background:#a92322;view-transition-name:area-activa}
+.venue .worlds::before {left:50%;background:#e4c486}
+.worlds a {text-align:center;padding:7px 3px;font:600 .79rem/1.45 system-ui,sans-serif}
+.worlds a:hover {color:white;text-decoration:underline;text-underline-offset:3px}
+.venue .worlds a[aria-current] {color:#241e14}
+html {scroll-padding-top:129px}
+@view-transition {navigation:auto}
+@media(prefers-reduced-motion:no-preference){
+  ::view-transition-group(area-activa){animation-duration:.28s}
+  .dishes article, .experiences summary, #categorias details, .zones button {transition:transform .25s ease, background-color .25s ease, box-shadow .25s ease}
+  @keyframes unfold {from{opacity:.1;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+  details[open] > p {animation:unfold .25s ease-out}
+  @supports (animation-timeline:view()) {
+    @keyframes uncover-field {from{transform:translateY(-9%) scale(.95);border-radius:36px 36px 0 0}to{transform:none;border-radius:0}}
+    #restaurante {animation:uncover-field linear both;animation-timeline:view();animation-range:entry 0% entry 90%;transform-origin:50% 0}
+    @keyframes dish-arrival {from{opacity:.55;transform:translateY(19px)}to{opacity:1;transform:none}}
+    .dishes article {animation:dish-arrival linear backwards;animation-timeline:view();animation-range:entry 0% entry 70%}
+  }
+  @media(max-width:810px){body:not(.venue) .cover{position:sticky;top:-18vh;z-index:0}body:not(.venue) main{isolation:isolate;background:var(--paper)}body:not(.venue) main>section:not(.cover){position:relative;z-index:1}body:not(.venue) main>.section{background:var(--paper);box-shadow:0 0 0 100vmax var(--paper);clip-path:inset(0 -100vmax)}}
+}
+@media(prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
+@media(hover:hover){
+  .dishes article:hover{translate:0 -3px;box-shadow:0 8px 22px #291a1017}
+  .experiences summary:hover, #categorias summary:hover{color:var(--accent)}
+  .experiences summary:hover{transform:translateX(4px)}
+}
+.favorites-heading {margin:32px 0 12px}
+.dishes {grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:18px;margin:0}
+.dishes article {overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:7px;padding-bottom:16px}
+.dishes article img {display:block;aspect-ratio:1.9;border-radius:0}
+.dishes article h3,.dishes article p {margin-inline:15px}
+.dishes article h3 {font-size:1.22rem}
+.estate {position:relative;background:var(--soft)}
+.estate .section {background:none;box-shadow:none;clip-path:none}
+.atlas {display:grid;grid-template-columns:minmax(0,1.7fr) minmax(235px,1fr);gap:22px;margin-top:25px;align-items:start}
+.terrain {background:#efe7d7;border:1px solid #cdbfa9;border-radius:12px;overflow:hidden;color:#4c453c}
+.terrain small {display:block;padding:0 18px 12px;font-size:.72rem}
+.estate-map {width:100%;display:block;height:auto}
+.map-place {cursor:pointer}
+.pin {fill:#fff9ec;stroke:#74382c;stroke-width:1.6}
+.pin text {fill:#74382c;stroke:none;font:700 15px system-ui}
+.selected .pin {fill:#a52120;stroke:#fff8eb;stroke-width:3}
+.selected .pin text {fill:white}
+.zones {display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.zones button {min-height:44px;padding:6px 8px;border:1px solid var(--line);border-radius:6px;text-align:left;color:var(--ink);font:600 .78rem/1.35 system-ui}
+.zones b {display:inline-grid;place-items:center;border-radius:50%;width:19px;height:19px;background:var(--soft);color:var(--ink);margin-right:2px}
+.zones button[aria-pressed=true] {background:#8e2420;color:white;border-color:#8e2420}
+.zone-info {margin-top:14px;padding:16px 18px;border-left:3px solid var(--accent);background:var(--card);min-height:105px}
+.zone-info p {margin-top:5px}
+@media(max-width:810px){
+  .bar nav.open {gap:1px}
+  .bar nav a {min-height:40px}
+  .atlas {grid-template-columns:1fr}
+  .worlds a {min-height:40px;display:grid;place-items:center}
+}
+@media(max-width:520px){.favorites-heading{font-size:1.32rem}.atlas{gap:12px}.bar .brand{gap:7px}.terrain small{padding-left:12px}.zones{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:no-preference){
+  .map-place {transition:translate .2s ease-out}
+  .map-place.selected {translate:0 -3px}
+}
