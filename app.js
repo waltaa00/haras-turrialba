@@ -36,7 +36,7 @@ document.addEventListener('keydown', event => {
 });
 
 async function readData(name) {
-  const response = await fetch('data/' + name + '.json?v=haras-4', {cache: 'no-cache'});
+  const response = await fetch('data/' + name + '.json?v=haras-5', {cache: 'no-cache'});
   if (!response.ok) throw new Error('No se pudo leer ' + name);
   return response.json();
 }
@@ -128,6 +128,7 @@ if (trail && menuSheet && cover) {
     const progress = Math.max(0, Math.min(1, (innerHeight - box.top) / innerHeight));
     const offset = progress * Math.max(0, box.width - 70);
     trail.style.setProperty('--travel', offset + 'px');
+    trail.style.setProperty('--grain-y', (progress * 50 - 25) + 'px');
   }
   function requestPosition() {
     if (!queued && !motion.matches) {

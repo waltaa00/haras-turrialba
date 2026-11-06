@@ -50,5 +50,9 @@
   "arroz": {
     "src": "assets/arroz.svg",
     "alt": "Ilustración de arroz con camarones"
+  },
+  "madera": {
+    "src": "assets/tablas-granero.webp",
+    "alt": ""
   }
 }
