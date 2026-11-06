@@ -37,8 +37,6 @@ html {scroll-padding-top:129px}
   @keyframes unfold {from{opacity:.1;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
   details[open] > p {animation:unfold .25s ease-out}
   @supports (animation-timeline:view()) {
-    @keyframes uncover-field {from{transform:translateY(-9%) scale(.95);border-radius:36px 36px 0 0}to{transform:none;border-radius:0}}
-    #restaurante {animation:uncover-field linear both;animation-timeline:view();animation-range:entry 0% entry 90%;transform-origin:50% 0}
     @keyframes dish-arrival {from{opacity:.55;transform:translateY(19px)}to{opacity:1;transform:none}}
     .dishes article {animation:dish-arrival linear backwards;animation-timeline:view();animation-range:entry 0% entry 70%}
   }
@@ -83,4 +81,25 @@ html {scroll-padding-top:129px}
 @media(prefers-reduced-motion:no-preference){
   .map-place {transition:translate .2s ease-out}
   .map-place.selected {translate:0 -3px}
+}
+
+/* La carta cubre la fotografía a medida que se desplaza la página. */
+.menu-sheet {
+  position: relative;
+  z-index: 1;
+  background: var(--paper);
+  overflow: clip;
+}
+.menu-sheet > .section {box-shadow:none;clip-path:none;background:transparent}
+.pin circle {fill:#fff9ec;stroke:#74382c}
+.selected .pin circle {fill:#a52120;stroke:#fff8eb}
+@media (prefers-reduced-motion: no-preference) {
+  body:not(.venue) .cover {position:sticky;top:-16vh}
+  .cover .scene {transform:translateY(var(--photo-shift,0px)) scale(1.14)}
+  .menu-sheet {
+    margin-top:calc(-22px + var(--sheet-shift,0px));
+    border-radius:var(--sheet-radius,28px) var(--sheet-radius,28px) 0 0;
+    box-shadow:0 -14px 35px #1e151528;
+  }
+  .menu-sheet > .section {padding-top:clamp(42px,6vw,86px)}
 }

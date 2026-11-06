@@ -36,7 +36,7 @@ document.addEventListener('keydown', event => {
 });
 
 async function readData(name) {
-  const response = await fetch('data/' + name + '.json');
+  const response = await fetch('data/' + name + '.json?v=haras-4', {cache: 'no-cache'});
   if (!response.ok) throw new Error('No se pudo leer ' + name);
   return response.json();
 }
@@ -113,11 +113,17 @@ if ('IntersectionObserver' in window) {
   panels.forEach(panel => reveals.observe(panel));
 }
 const trail = document.querySelector('.ruta');
-if (trail) {
+const menuSheet = document.querySelector('.menu-sheet');
+const cover = document.querySelector('.cover');
+if (trail && menuSheet && cover) {
   let queued = false;
-  function positionTractor() {
+  function updateScrollEffects() {
     queued = false;
     if (motion.matches) return;
+    const travel = Math.min(1, window.scrollY / Math.max(1, cover.offsetHeight * 0.75));
+    cover.style.setProperty('--photo-shift', (travel * 38) + 'px');
+    menuSheet.style.setProperty('--sheet-shift', (-travel * 40) + 'px');
+    menuSheet.style.setProperty('--sheet-radius', (28 - travel * 22) + 'px');
     const box = trail.getBoundingClientRect();
     const progress = Math.max(0, Math.min(1, (innerHeight - box.top) / innerHeight));
     const offset = progress * Math.max(0, box.width - 70);
@@ -126,7 +132,7 @@ if (trail) {
   function requestPosition() {
     if (!queued && !motion.matches) {
       queued = true;
-      requestAnimationFrame(positionTractor);
+      requestAnimationFrame(updateScrollEffects);
     }
   }
   window.addEventListener('scroll', requestPosition, {passive:true});
